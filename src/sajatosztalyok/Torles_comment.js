@@ -63,16 +63,21 @@ const App = () => {
                     keyExtractor={({ Comment_id }) => Comment_id}
                     renderItem={({ item }) => (
                         <View>
-                            <Text>
-                                Név:{item.Comment_nev}
+                            <Text style={{textAlign:'center', fontSize:25, color:'grey',textDecorationLine:'underline'  }}>
+                                {item.Comment_nev}: 
+                            </Text>
+                            <Text style={{textAlign:'center'}}>
+                                {item.Comment_szoveg}
                             </Text>
 
                             <TouchableOpacity
-                                style={styles.kekgomb}
-                                onPress={async () => torles(item.Comment_id)}
+                                style={{ backgroundColor: 'red', width: 125, borderRadius: 10, marginLeft: 'auto', marginRight: 'auto' }}
+                                onPress={() => torles(item.Comment_id)}
                             >
-                                <Text style={{ color: "white", fontWeight: "bold", fontSize: 15 }}>Törlés</Text>
+                                <Text style={{ color: "white", fontWeight: "bold", fontSize: 25, textAlign: 'center' }}  >Törlés</Text>
                             </TouchableOpacity>
+                            <View style={{ marginTop: 15, marginBottom: 20, borderColor: 'gray', borderWidth: 1 }}></View>
+
                         </View>
                     )}
                 />
