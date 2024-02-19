@@ -24,6 +24,7 @@ import Torles_jatekok from './sajatosztalyok/Torles_jatekok'
 import Torles_comment from './sajatosztalyok/Torles_comment'
 import PcAlkatreszek from './sajatosztalyok/PcAlkatreszek'
 import Torles_Pcalkatresz from './sajatosztalyok/Torles_alkatreszek'
+import Diagram_atlag from './sajatosztalyok/Diagram_atlag'
 
 class App extends Component {
   constructor(props) {
@@ -66,7 +67,7 @@ class App extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               {/* <Nav.Link as={Link} to="/Kereses">Keresés</Nav.Link> */}
-              <Nav.Link as={Link} to="/Proba">Próba</Nav.Link>
+              <Nav.Link as={Link} to="/Proba">Játékok</Nav.Link>
               <Nav.Link as={Link} to="/Comment">Comment</Nav.Link>
               {/* {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>} */}
               {!showAdminBoard && <Nav.Link as={Link} to="/PcAlkatreszek">Pc Alkatrészek</Nav.Link>}
@@ -75,6 +76,7 @@ class App extends Component {
               {/* {showAdminBoard && <Nav.Link as={Link} to="/Admin">Admin</Nav.Link>} */}
               {/* {showAdminBoard && <Nav.Link as={Link} to="/ProbaAdmin">Admin Próba</Nav.Link>} */}
               {showAdminBoard && <Nav.Link as={Link} to="/Diagram_film">Játékok Diagram</Nav.Link>}
+              {showAdminBoard && <Nav.Link as={Link} to="/Diagram_atlag">Átlag Diagram</Nav.Link>}
               {/* {currentUser && <Nav.Link as={Link} to="/user">User</Nav.Link>} */}
               {showAdminBoard && (
                 <NavDropdown title="Törlés" id="collasible-nav-dropdown">
@@ -127,6 +129,7 @@ class App extends Component {
             <Route path="/ProbaAdmin" component={ProbaAdmin} />
             <Route path="/Comment" component={Comment} />
             <Route path="/Diagram_film" component={Diagram_film} />
+            <Route path="/Diagram_atlag" component={Diagram_atlag} />
             <Route path="/Torles_jatekok" component={Torles_jatekok} />
             <Route path="/Torles_comment" component={Torles_comment} />
             <Route path="/PcAlkatreszek" component={PcAlkatreszek} />
