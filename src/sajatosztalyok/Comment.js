@@ -1,12 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, Alert, FlatList, Text, TextInput, View, TouchableOpacity } from 'react-native';
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+
+
+
 const IP = require('./Ipcim')
+
 
 
 
 const Comment = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [nev, setNev] = useState('');
+  const [szoveg, setSzoveg] = useState('');
+  const [selectedComment, setSelectedComment] = useState(null);
+  const [selectedCommentid, setSelectedCommentid] = useState('');
+
+  const szerkesztes = (id) => {
+    const selected = data.find(item => item.Comment_id === id);
+    setSelectedComment(selected);
+    setSzoveg(selected.Comment_szoveg)
+    setSelectedCommentid(id)
+  };
+
+
 
   const getMovies = async () => {
     try {
@@ -25,6 +43,7 @@ const Comment = ({ navigation }) => {
     getMovies();
   }, []);
 
+
   const commentmegjelen = (nev, szoveg) => {
     Alert.alert(
       `${nev}`,
@@ -41,7 +60,7 @@ const Comment = ({ navigation }) => {
   return (
 
     <View style={{ padding: 24, marginTop: -18 }}>
-      {isLoading ? (
+      {selectedComment === null && isLoading ? (
         <ActivityIndicator />
       ) : (
         <FlatList
@@ -49,24 +68,28 @@ const Comment = ({ navigation }) => {
           keyExtractor={({ id }) => id}
           renderItem={({ item }) => (
             <View key={item.Comment_id}>
-              <TouchableOpacity onPress={() => commentmegjelen(item.Comment_nev, item.Comment_szoveg)}>
-                <View style={{ borderWidth: 1, borderColor: 'green', borderRadius: 7, marginBottom: 8 }} >
+              <View style={{ borderWidth: 1, borderColor: 'green', borderRadius: 7, marginBottom: 8 }}>
+                <Text style={{ padding: 3, margin: 6, fontSize: 24, textAlign: 'left' }}>{item.Comment_nev} <Text style={{ fontSize: 12, color: 'grey' }}>közzétéve: {item.Comment_ido.split('T')[0]}</Text></Text>
+                <Text style={{ textAlign: 'center', fontSize: 17 }}>{item.Comment_szoveg}</Text>
+                <TouchableOpacity onPress={() => szerkesztes(item.Comment_id)}><Text>Szerkesztés</Text></TouchableOpacity>
+                {selectedComment &&  item.Comment_id===selectedCommentid &&(
+                  <View>
+                    <TextInput
+                      style={{ height: 150 }}
+                      value={szoveg}
+                      onChangeText={(text) => setSzoveg(text)}
+                      multiline={true}
+                    />
 
-                  <Text style={{ padding: 3, margin: 6, fontSize: 24, textAlign: 'left' }}>{item.Comment_nev} <Text style={{ fontSize: 12, color: 'grey' }}>közzétéve: {item.Comment_ido.split('T')[0]}</Text></Text>
-
-                  <Text style={{ textAlign: 'center', fontSize: 17 }}>{item.Comment_szoveg}</Text>
-
-                </View>
-              </TouchableOpacity>
+                  </View>
+                )}
+              </View>
             </View>
           )}
         />
       )}
 
-
     </View>
-
   );
 };
-
 export default Comment;

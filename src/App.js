@@ -26,6 +26,7 @@ import PcAlkatreszek from './sajatosztalyok/PcAlkatreszek'
 import Torles_Pcalkatresz from './sajatosztalyok/Torles_alkatreszek'
 import Diagram_atlag from './sajatosztalyok/Diagram_atlag'
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -134,6 +135,7 @@ class App extends Component {
             <Route path="/Torles_comment" component={Torles_comment} />
             <Route path="/PcAlkatreszek" component={PcAlkatreszek} />
             <Route path="/Torles_Pcalkatresz" component={Torles_Pcalkatresz} />
+
 
           </Switch>
         </div>
