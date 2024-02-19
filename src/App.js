@@ -25,6 +25,7 @@ import Torles_comment from './sajatosztalyok/Torles_comment'
 import PcAlkatreszek from './sajatosztalyok/PcAlkatreszek'
 import Torles_Pcalkatresz from './sajatosztalyok/Torles_alkatreszek'
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -131,6 +132,7 @@ class App extends Component {
             <Route path="/Torles_comment" component={Torles_comment} />
             <Route path="/PcAlkatreszek" component={PcAlkatreszek} />
             <Route path="/Torles_Pcalkatresz" component={Torles_Pcalkatresz} />
+
 
           </Switch>
         </div>
