@@ -64,9 +64,6 @@ const Comment = ({ navigation }) => {
       )}
 
 
-      <TouchableOpacity style={{ textAlign: 'center', backgroundColor: "#06c995", width: 175, height: 45, padding: 8, marginLeft: 86, borderRadius: 5 }} >
-        <Text style={{ color: "black", textAlign: "center", fontSize: 18 }}>Hozzászólás</Text>
-      </TouchableOpacity>
     </View>
 
   );

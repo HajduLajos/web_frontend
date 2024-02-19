@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, FlatList, Text, View, StyleSheet, TouchableOpacity,Image } from 'react-native';
 
 
 const IP = require('./Ipcim')
@@ -63,16 +63,17 @@ const App = () => {
                     keyExtractor={({ jatekok_id }) => jatekok_id}
                     renderItem={({ item }) => (
                         <View>
-                            <Text>
-                                Név:{item.jatekok_nev} Ár:{item.jatekok_ar}
+                            <Text style={{textAlign:'center',fontSize:25}}>
+                                {item.jatekok_nev} 
                             </Text>
-
+                            <Image source={{ uri: `http://nodejs2.dszcbaross.edu.hu:22003/${item.jatekok_kep}` }} style={{ width: 135, height: 135, marginLeft: 'auto', marginRight: 'auto', borderRadius: 10 }} />
                             <TouchableOpacity
-                                style={styles.kekgomb}
-                                onPress={async () => torles(item.jatekok_id)}
+                                style={{ backgroundColor: 'red', width: 125, borderRadius: 10, marginLeft: 'auto', marginRight: 'auto' }}
+                                onPress={() => torles(item.jatekok_id)}
                             >
-                                <Text style={{ color: "white", fontWeight: "bold", fontSize: 15 }}>Törlés</Text>
+                                <Text style={{ color: "white", fontWeight: "bold", fontSize: 25, textAlign: 'center' }}  >Törlés</Text>
                             </TouchableOpacity>
+                            <View style={{ marginTop: 15, marginBottom: 20, borderColor: 'gray', borderWidth: 1 }}></View>
                         </View>
                     )}
                 />

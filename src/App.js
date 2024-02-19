@@ -58,7 +58,7 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="light">
           <Navbar.Brand as={Link} to="/">
             Záródoga
           </Navbar.Brand>
