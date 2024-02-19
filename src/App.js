@@ -22,6 +22,8 @@ import Comment from './sajatosztalyok/Comment'
 import Diagram_film from './sajatosztalyok/Diagram_film'
 import Torles_jatekok from './sajatosztalyok/Torles_jatekok'
 import Torles_comment from './sajatosztalyok/Torles_comment'
+import PcAlkatreszek from './sajatosztalyok/PcAlkatreszek'
+import Torles_Pcalkatresz from './sajatosztalyok/Torles_alkatreszek'
 
 class App extends Component {
   constructor(props) {
@@ -67,18 +69,38 @@ class App extends Component {
               <Nav.Link as={Link} to="/Proba">Próba</Nav.Link>
               <Nav.Link as={Link} to="/Comment">Comment</Nav.Link>
               {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>}
-              {showAdminBoard && <Nav.Link as={Link} to="/Torles_jatekok">Játékok Törlése</Nav.Link>}
-              {showAdminBoard && <Nav.Link as={Link} to="/Torles_comment">Comment Törlése</Nav.Link>}
-              {showAdminBoard && <Nav.Link as={Link} to="/Admin">Admin</Nav.Link>}
-              {showAdminBoard && <Nav.Link as={Link} to="/ProbaAdmin">Admin Próba</Nav.Link>}
+              {!showAdminBoard && <Nav.Link as={Link} to="/PcAlkatreszek">Pc Alkatrészek</Nav.Link>}
+              {/* {showAdminBoard && <Nav.Link as={Link} to="/Torles_jatekok">Játékok Törlése</Nav.Link>}
+              {showAdminBoard && <Nav.Link as={Link} to="/Torles_comment">Comment Törlése</Nav.Link>} */}
+              {/* {showAdminBoard && <Nav.Link as={Link} to="/Admin">Admin</Nav.Link>} */}
+              {/* {showAdminBoard && <Nav.Link as={Link} to="/ProbaAdmin">Admin Próba</Nav.Link>} */}
               {showAdminBoard && <Nav.Link as={Link} to="/Diagram_film">Játékok Diagram</Nav.Link>}
-              {currentUser && <Nav.Link as={Link} to="/user">User</Nav.Link>}
+              {/* {currentUser && <Nav.Link as={Link} to="/user">User</Nav.Link>} */}
+              {showAdminBoard && (
+              <NavDropdown title="Törlés" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="/Torles_Pcalkatresz">Pc alkatrész törlés</NavDropdown.Item>
+                <NavDropdown.Item href="/Torles_jatekok">
+                  Játékok törlés
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/Torles_comment">Comment törlés</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+              )}
+
             </Nav>
+            
             <Nav>
               {currentUser ? (
                 <React.Fragment>
                   <Nav.Link as={Link} to="/profile">{currentUser.username}</Nav.Link>
-                  <Nav.Link as={Link} to="/login" onClick={this.logOut}>LogOut</Nav.Link>
+                  <li className="nav-item">
+                    <a href="/login" className="nav-link" onClick={this.logOut}>
+                      LogOut
+                    </a>
+                  </li>
                 </React.Fragment>
               ) : (
                 <React.Fragment>
@@ -99,6 +121,7 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/Admin" component={Admin} />
+
             <Route path="/Kereses" component={Kereses} />
             <Route path="/Proba" component={Proba} />
             <Route path="/ProbaAdmin" component={ProbaAdmin} />
@@ -106,6 +129,9 @@ class App extends Component {
             <Route path="/Diagram_film" component={Diagram_film} />
             <Route path="/Torles_jatekok" component={Torles_jatekok} />
             <Route path="/Torles_comment" component={Torles_comment} />
+            <Route path="/PcAlkatreszek" component={PcAlkatreszek} />
+            <Route path="/Torles_Pcalkatresz" component={Torles_Pcalkatresz} />
+            
           </Switch>
         </div>
       </div>
