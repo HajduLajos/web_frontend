@@ -68,7 +68,7 @@ class App extends Component {
               <Nav.Link as={Link} to="/Kereses">Keresés</Nav.Link>
               <Nav.Link as={Link} to="/Proba">Próba</Nav.Link>
               <Nav.Link as={Link} to="/Comment">Comment</Nav.Link>
-              {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>}
+              {/* {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>} */}
               {!showAdminBoard && <Nav.Link as={Link} to="/PcAlkatreszek">Pc Alkatrészek</Nav.Link>}
               {/* {showAdminBoard && <Nav.Link as={Link} to="/Torles_jatekok">Játékok Törlése</Nav.Link>}
               {showAdminBoard && <Nav.Link as={Link} to="/Torles_comment">Comment Törlése</Nav.Link>} */}
