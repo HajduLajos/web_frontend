@@ -65,7 +65,7 @@ class App extends Component {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/Kereses">Keresés</Nav.Link>
+              {/* <Nav.Link as={Link} to="/Kereses">Keresés</Nav.Link> */}
               <Nav.Link as={Link} to="/Proba">Próba</Nav.Link>
               <Nav.Link as={Link} to="/Comment">Comment</Nav.Link>
               {/* {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>} */}
@@ -77,21 +77,21 @@ class App extends Component {
               {showAdminBoard && <Nav.Link as={Link} to="/Diagram_film">Játékok Diagram</Nav.Link>}
               {/* {currentUser && <Nav.Link as={Link} to="/user">User</Nav.Link>} */}
               {showAdminBoard && (
-              <NavDropdown title="Törlés" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/Torles_Pcalkatresz">Pc alkatrész törlés</NavDropdown.Item>
-                <NavDropdown.Item href="/Torles_jatekok">
-                  Játékok törlés
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/Torles_comment">Comment törlés</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+                <NavDropdown title="Törlés" id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="/Torles_Pcalkatresz">Pc alkatrész törlés</NavDropdown.Item>
+                  <NavDropdown.Item href="/Torles_jatekok">
+                    Játékok törlés
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/Torles_comment">Comment törlés</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">
+                    Separated link
+                  </NavDropdown.Item>
+                </NavDropdown>
               )}
 
             </Nav>
-            
+
             <Nav>
               {currentUser ? (
                 <React.Fragment>
@@ -131,7 +131,7 @@ class App extends Component {
             <Route path="/Torles_comment" component={Torles_comment} />
             <Route path="/PcAlkatreszek" component={PcAlkatreszek} />
             <Route path="/Torles_Pcalkatresz" component={Torles_Pcalkatresz} />
-            
+
           </Switch>
         </div>
       </div>
