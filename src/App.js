@@ -24,7 +24,7 @@ import Torles_jatekok from './sajatosztalyok/Torles_jatekok'
 import Torles_comment from './sajatosztalyok/Torles_comment'
 import PcAlkatreszek from './sajatosztalyok/PcAlkatreszek'
 import Torles_Pcalkatresz from './sajatosztalyok/Torles_alkatreszek'
-import Ipcim from "./sajatosztalyok/Ipcim";
+import Diagram_atlag from './sajatosztalyok/Diagram_atlag'
 
 const IP = require('./sajatosztalyok/Ipcim')
 
@@ -69,8 +69,8 @@ class App extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               {/* <Nav.Link as={Link} to="/Kereses">Keresés</Nav.Link> */}
-              {!showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/Proba">Próba</Nav.Link>}
-              {!showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/Comment">Comment</Nav.Link>}
+              <Nav.Link as={Link} style={{fontSize:20}} to="/Proba">Próba</Nav.Link>
+              <Nav.Link as={Link} style={{fontSize:20}} to="/Comment">Comment</Nav.Link>
               {/* {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>} */}
               {!showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/PcAlkatreszek">Pc Alkatrészek</Nav.Link>}
               {/* {showAdminBoard && <Nav.Link as={Link} to="/Torles_jatekok">Játékok Törlése</Nav.Link>}
@@ -130,6 +130,7 @@ class App extends Component {
             <Route path="/ProbaAdmin" component={ProbaAdmin} />
             <Route path="/Comment" component={Comment} />
             <Route path="/Diagram_film" component={Diagram_film} />
+            <Route path="/Diagram_atlag" component={Diagram_atlag} />
             <Route path="/Torles_jatekok" component={Torles_jatekok} />
             <Route path="/Torles_comment" component={Torles_comment} />
             <Route path="/PcAlkatreszek" component={PcAlkatreszek} />
