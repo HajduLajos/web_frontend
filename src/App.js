@@ -69,8 +69,8 @@ class App extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               {/* <Nav.Link as={Link} to="/Kereses">Keresés</Nav.Link> */}
-              <Nav.Link as={Link} style={{fontSize:20}} to="/Proba">Próba</Nav.Link>
-              <Nav.Link as={Link} style={{fontSize:20}} to="/Comment">Comment</Nav.Link>
+              {!showAdminBoard &&<Nav.Link as={Link} style={{fontSize:20}} to="/Proba">Próba</Nav.Link>}
+              {!showAdminBoard &&<Nav.Link as={Link} style={{fontSize:20}} to="/Comment">Comment</Nav.Link>}
               {/* {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>} */}
               {!showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/PcAlkatreszek">Pc Alkatrészek</Nav.Link>}
               {/* {showAdminBoard && <Nav.Link as={Link} to="/Torles_jatekok">Játékok Törlése</Nav.Link>}
