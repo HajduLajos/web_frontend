@@ -12,7 +12,7 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown,Image } from "react-bootstrap";
 
 import Admin from './sajatosztalyok/Admin'
 import Kereses from "./sajatosztalyok/Kereses"
@@ -24,7 +24,9 @@ import Torles_jatekok from './sajatosztalyok/Torles_jatekok'
 import Torles_comment from './sajatosztalyok/Torles_comment'
 import PcAlkatreszek from './sajatosztalyok/PcAlkatreszek'
 import Torles_Pcalkatresz from './sajatosztalyok/Torles_alkatreszek'
+import Ipcim from "./sajatosztalyok/Ipcim";
 
+const IP = require('./sajatosztalyok/Ipcim')
 
 class App extends Component {
   constructor(props) {
@@ -59,35 +61,35 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark">
           <Navbar.Brand as={Link} to="/">
-            Záródoga
+          <Image src='http://localhost:8080/logo.png'  style={{ width: 55, height: 75, borderRadius: 40}} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               {/* <Nav.Link as={Link} to="/Kereses">Keresés</Nav.Link> */}
-              <Nav.Link as={Link} to="/Proba">Próba</Nav.Link>
-              <Nav.Link as={Link} to="/Comment">Comment</Nav.Link>
+              {!showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/Proba">Próba</Nav.Link>}
+              {!showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/Comment">Comment</Nav.Link>}
               {/* {showModeratorBoard && <Nav.Link as={Link} to="/mod">Moderator</Nav.Link>} */}
-              {!showAdminBoard && <Nav.Link as={Link} to="/PcAlkatreszek">Pc Alkatrészek</Nav.Link>}
+              {!showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/PcAlkatreszek">Pc Alkatrészek</Nav.Link>}
               {/* {showAdminBoard && <Nav.Link as={Link} to="/Torles_jatekok">Játékok Törlése</Nav.Link>}
               {showAdminBoard && <Nav.Link as={Link} to="/Torles_comment">Comment Törlése</Nav.Link>} */}
               {/* {showAdminBoard && <Nav.Link as={Link} to="/Admin">Admin</Nav.Link>} */}
               {/* {showAdminBoard && <Nav.Link as={Link} to="/ProbaAdmin">Admin Próba</Nav.Link>} */}
-              {showAdminBoard && <Nav.Link as={Link} to="/Diagram_film">Játékok Diagram</Nav.Link>}
+              {showAdminBoard && <Nav.Link style={{fontSize:20}} as={Link} to="/Diagram_film">Játékok Diagram</Nav.Link>}
               {/* {currentUser && <Nav.Link as={Link} to="/user">User</Nav.Link>} */}
               {showAdminBoard && (
-                <NavDropdown title="Törlés" id="collasible-nav-dropdown">
+                <NavDropdown style={{fontSize:20}} title="Törlés" id="collasible-nav-dropdown">
                   <NavDropdown.Item href="/Torles_Pcalkatresz">Pc alkatrész törlés</NavDropdown.Item>
+                  <NavDropdown.Divider />
                   <NavDropdown.Item href="/Torles_jatekok">
                     Játékok törlés
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="/Torles_comment">Comment törlés</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/Torles_comment">Comment törlés</NavDropdown.Item>
+                  
+                 
                 </NavDropdown>
               )}
 
@@ -96,17 +98,17 @@ class App extends Component {
             <Nav>
               {currentUser ? (
                 <React.Fragment>
-                  <Nav.Link as={Link} to="/profile">{currentUser.username}</Nav.Link>
+                  <Nav.Link style={{fontSize:20}} as={Link} to="/profile">{currentUser.username}</Nav.Link>
                   <li className="nav-item">
-                    <a href="/login" className="nav-link" onClick={this.logOut}>
-                      LogOut
+                    <a style={{fontSize:20}} href="/login" className="nav-link" onClick={this.logOut}>
+                      Logout
                     </a>
                   </li>
                 </React.Fragment>
               ) : (
                 <React.Fragment>
-                  <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                  <Nav.Link as={Link} to="/register">Sign Up</Nav.Link>
+                  <Nav.Link style={{fontSize:20}} as={Link} to="/login">Login</Nav.Link>
+                  <Nav.Link style={{fontSize:20}} as={Link} to="/register">Sign Up</Nav.Link>
                 </React.Fragment>
               )}
             </Nav>

@@ -71,18 +71,7 @@ const Comment = ({ navigation }) => {
               <View style={{ borderWidth: 1, borderColor: 'green', borderRadius: 7, marginBottom: 8 }}>
                 <Text style={{ padding: 3, margin: 6, fontSize: 24, textAlign: 'left' }}>{item.Comment_nev} <Text style={{ fontSize: 12, color: 'grey' }}>közzétéve: {item.Comment_ido.split('T')[0]}</Text></Text>
                 <Text style={{ textAlign: 'center', fontSize: 17 }}>{item.Comment_szoveg}</Text>
-                <TouchableOpacity onPress={() => szerkesztes(item.Comment_id)}><Text>Szerkesztés</Text></TouchableOpacity>
-                {selectedComment &&  item.Comment_id===selectedCommentid &&(
-                  <View>
-                    <TextInput
-                      style={{ height: 150 }}
-                      value={szoveg}
-                      onChangeText={(text) => setSzoveg(text)}
-                      multiline={true}
-                    />
-
-                  </View>
-                )}
+                
               </View>
             </View>
           )}

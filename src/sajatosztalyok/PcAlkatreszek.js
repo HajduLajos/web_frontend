@@ -121,9 +121,6 @@ const Proba2 = ({ navigation }) => {
               </Text>
               <Image source={{ uri: `http://nodejs2.dszcbaross.edu.hu:22003/${item.alkatresz_kep}` }} style={{ width: 135, height: 135, marginLeft: 'auto', marginRight: 'auto', borderRadius: 10 }} />
               <Text style={{ textAlign: 'center', fontSize: 20 }}>{item.alkatresz_ar} FT</Text>
-              <TouchableOpacity style={{ backgroundColor: "#06c995", width: 175, height: 45, padding: 8, marginLeft: 'auto',marginRight:'auto', borderRadius: 5 }} onPress={() => alert('Szia')}>
-                <Text style={{ color: "black", textAlign: "center", fontSize: 18 }} >Részletek</Text>
-              </TouchableOpacity>
               <View style={{ marginTop: 15, marginBottom: 50, borderColor: 'gray', borderWidth: 1 }}></View>
             </View>
           )}
