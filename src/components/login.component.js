@@ -96,7 +96,7 @@ export default class Login extends Component {
             }}
           >
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Felhasználónév</label>
               <Input
                 type="text"
                 className="form-control"
@@ -108,7 +108,7 @@ export default class Login extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Jelszó:</label>
               <Input
                 type="password"
                 className="form-control"
