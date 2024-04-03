@@ -101,6 +101,8 @@ export default class FetchExample extends React.Component {
                 >
                   <Text style={{ color: "white", fontWeight: "bold", fontSize: 15 }}  >Erre szavazok</Text>
                 </TouchableOpacity>
+                <View style={{ marginTop: 25, marginBottom: 10, borderColor: 'gray', borderWidth: 1 }}></View>
+
               </View>
 
             }

@@ -39,7 +39,6 @@ const App = () => {
                                     <Text style={{ padding: 3, margin: 6, fontSize: 24, textAlign: 'left' }}>{item.jatekok_nev} <Text style={{ fontSize: 12, color: 'grey' }}></Text></Text>
                                     <Image source={{ uri: `http://nodejs2.dszcbaross.edu.hu:22003/${item.jatekok_kep}` }} style={{ width: 180, height: 180, marginLeft: 'auto', marginRight: 'auto', borderRadius: 10 }} />
                                     <Text style={{ textAlign: 'center', fontSize: 17 }}>{item.jatekok_ar}FT</Text>
-
                                 </View>
                             </TouchableOpacity>
                         </View>

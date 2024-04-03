@@ -1,3 +1,3 @@
 module.exports = {
-    ipcim: 'http://localhost:8080/'
-  };
+  ipcim: 'http://localhost:8080/'
+};

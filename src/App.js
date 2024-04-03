@@ -19,12 +19,11 @@ import Kereses from "./sajatosztalyok/Kereses"
 import Proba from './sajatosztalyok/Proba'
 import ProbaAdmin from './sajatosztalyok/ProbaAdmin'
 import Comment from './sajatosztalyok/Comment'
-import Diagram_film from './sajatosztalyok/Diagram_film'
+import Diagram_film from './sajatosztalyok/Diagram_jatek'
 import Torles_jatekok from './sajatosztalyok/Torles_jatekok'
 import Torles_comment from './sajatosztalyok/Torles_comment'
 import PcAlkatreszek from './sajatosztalyok/PcAlkatreszek'
 import Torles_Pcalkatresz from './sajatosztalyok/Torles_alkatreszek'
-import Diagram_atlag from './sajatosztalyok/Diagram_atlag'
 import Hibabejelentes from './sajatosztalyok/hibabejelentes'
 import adminHibabejelntes from "./sajatosztalyok/adminHibabejelentes"
 
@@ -135,7 +134,6 @@ class App extends Component {
             <Route path="/ProbaAdmin" component={ProbaAdmin} />
             <Route path="/Comment" component={Comment} />
             <Route path="/Diagram_film" component={Diagram_film} />
-            <Route path="/Diagram_atlag" component={Diagram_atlag} />
             <Route path="/Torles_jatekok" component={Torles_jatekok} />
             <Route path="/Torles_comment" component={Torles_comment} />
             <Route path="/PcAlkatreszek" component={PcAlkatreszek} />
